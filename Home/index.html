@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <style>
+      body {
+        direction: rtl;
+        text-align: right;
+      }
+
+      #slider .hami {
+        left: 0;
+      }
+
+      #slider .img-box {
+        z-index: 1;
+      }
+
+      #slider .number {
+        color: #ffc107;
+        font-size: 12rem;
+        margin-bottom: -5rem;
+        margin-right: -2rem;
+        opacity: 0.4;
+      }
+
+      #slider .box-title {
+        width: max-content;
+        padding: 16px 3rem;
+        margin-bottom: 16px;
+        margin-right: -26px;
+        position: relative;
+        font-size: 24px;
+        z-index: 2;
+      }
+
+      #slider .video-icon {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        font-size: 3rem;
+        background: #ddd;
+        border-radius: 50%;
+        height: 36px;
+        display: flex;
+        width: 35px;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.6;
+      }
+
+      .rounded-bottom-left {
+        border-bottom-left-radius: 50px;
+      }
+      #latest-products {
+        margin-top: 5rem;
+        position: relative;
+      }
+      #magazine {
+        margin-top: 5rem;
+        position: relative;
+      }
+      .backgorund-pattern {
+        width: 100%;
+        position: absolute;
+      }
+      .fa-rotate-45 {
+        transform: rotate(45deg) translateY(4px);
+      }
+      .swiper-container {
+        direction: rtl;
+        margin-top: 30px;
+      }
+      .swiper-container .swiper-slide {
+        height: auto;
+        padding-bottom: 15px;
+      }
+      .swiper-button-next {
+        margin-right: -80px;
+        color: #000;
+      }
+      .swiper-button-prev {
+        margin-left: -80px;
+        color: #000;
+      }
+      .img-box {
+        position: relative;
+      }
+
+      .img-box .title {
+        position: absolute;
+        bottom: 0;
+        background: #ffffffe0;
+        width: 90%;
+        right: 5%;
+        padding: 8px 0;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .img-box .title .part {
+        position: absolute;
+        font-size: 12px;
+        top: -19px;
+        right: 8px;
+        background: #ffc107;
+        padding: 4px 10px;
+      }
+
+      .description p.border-right-dashed {
+        padding: 0px 6px 0;
+        margin-top: 10px;
+        text-align: justify;
+        border-right: 2px dashed #ffc107;
+      }
+
+      .description a {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #000;
+        text-decoration: none;
+      }
+
+      .description a:hover {
+        color: #666;
+      }
+      .listen-on {
+        margin-top: 100px;
+      }
+      .listen-on .title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .listen-on button {
+        padding: 0;
+        background: #fff;
+        border-radius: 0.65rem;
+        overflow: hidden;
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+
+      .listen-on button img {
+        width: 100%;
+      }
+      .listen-on a {
+        color: #666;
+        text-decoration: none;
+      }
+      .listen-on a:hover {
+        color: #333;
+      }
+      .listen-on .speaker {
+        position: absolute;
+        right: -60px;
+        top: -40px;
+      }
+      .background-logo {
+        background-image: url(./images/background-logo-cololr.png);
+        padding: 80px 0 60px;
+      }
+      .background-logo .description p {
+        padding-right: 18px;
+        text-align: justify;
+      }
+
+      .background-logo .description .fa-quote-right {
+        font-size: 3rem;
+        position: absolute;
+        right: -18px;
+      }
+      .background-logo .description .fa-quote-left {
+        font-size: 3rem;
+        float: left;
+      }
+      .background-logo .text-dark i,
+      .background-logo .text-dark b {
+        color: #000;
+      }
+      .about .title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .about .subtitle {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .about p {
+        line-height: 2;
+        text-align: justify;
+        text-align-last: center;
+      }
+
+      .about p a {
+        background: #ffc107;
+        color: #000;
+        padding: 4px 6px;
+        border-radius: 0.5rem;
+        transition: 0.5s ease;
+        margin: 4px;
+        text-decoration: none;
+      }
+
+      .about p a:hover {
+        box-shadow: 0 0 8px #ffc107;
+      }
+
+      .footer {
+        background: #ddd;
+        padding: 60px 0 10px;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .footer input[type="email"] {
+        border-radius: 0.5rem;
+        border: 1px solid #ddd;
+        width: 250px;
+        padding-right: 10px;
+      }
+
+      .footer .send {
+        background: #ffc107;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 0.45rem;
+        margin-right: 0.5rem;
+      }
+
+      .footer .text-center i {
+        font-size: 1.5rem;
+      }
+
+      .footer .links a {
+        color: #333;
+        margin: 0 8px;
+        transition: 0.5s ease;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .footer .links a:hover {
+        color: #ffc107;
+      }
+
+      .footer .links {
+        margin-top: 10px;
+      }
+
+      .footer .title {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="container d-flex align-items-center justify-content-between mt-4">
+      <div class="">
+        <img src="images/logo.png" height="60px" alt="" />
+      </div>
+      <div class="text-left">
+        <div>
+          <i class="fa fa-wifi fa-rotate-45"></i>
+          <i class="fa fa-instagram mr-2"></i>
+          <i class="fa fa-telegram mr-2"></i>
+          <i class="fa fa-twitter mr-2"></i>
+        </div>
+        <div>
+          <ul class="nav">
+            <li class="text-warning">خانه</li>
+            <li class="mr-2">درباره رادیودال</li>
+            <li class="mr-2">آرشیو پاکدست</li>
+            <li class="mr-2">حمایت</li>
+            <li class="mr-2">تماس</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <hr />
+    <div class="container position-relative mt-4" id="slider">
+      <div class="position-absolute hami border rounded px-5 py-5 text-left d-flex flex-column position-relative">
+        <img src="./images/digikala.svg" width="80px" alt="" />
+        <div class="position-absolute" style="bottom: 5px; left: 5px; opacity: 0.5;">
+          <span>حامی استارتاپی</span>
+          <i class="fa fa-arrow-left"></i>
+        </div>
+      </div>
+      <div class="d-flex pt-5 align-items-end">
+        <div class="position-relative img-box text-right">
+          <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+          <img src="./images/slider.jpg" alt="" />
+          <div class="video-icon">
+            <i class="fa fa-play-circle"></i>
+          </div>
+        </div>
+        <div>
+          <div class="number">38</div>
+          <div class="box-title bg-warning rounded">دیاسپوران، با دنیز از نیویورک</div>
+          <p class="mb-4 mr-2">
+            مهمون این قسمت از رادیو دال دنیز از نیویورکه. دنیز تقریبا هشت ساله که در آمریکا زندگی میکنه و مشغول به فعالیت در حوزه‌ی تئاتر و بازیگری
+            است. علاوه بر این دنیز یکی از سازندگان مجموعه انیمشن دیاسپوران با موضوع مهاجرته
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="./images/backgorund-pattern.png" class="backgorund-pattern mt-4" alt="" />
+    <div class="container" id="latest-products">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="title">
+          <i class="fa fa-play"></i>
+          آخرین قسمت های منتشر شده
+        </div>
+        <div><span>آرشیو پادکست</span> <i class="fa fa-arrow-left"></i></div>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-01.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 37</div>
+                شفق شمالی، با سپهر از فنلاند
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت همراه با سپهر به کشور فنلاند سر زدیم. سپهر در ایران زبان انگلیسی تدریس میکرد. اتفاقاتی که در زندگی‌اش افتاد باعث شد که پس
+                از سال‌ها کار کردن تصمیم به مهاجرت بگیره. در این مسیر علاوه بر فنلاند، از کانادا و کشورهای دیگری هم سر در میاره و تا سه تا مدرک ارشد
+                هم پیش میره
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-02.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 36</div>
+                ویو از اجنبی، وحیده از لهستان
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                وحیده از پادکست اجنبی در این قسمت مهمان رادیو دال شده. وحیده چندین ساله که در لهستان زندگی میکنه. در طول این مدت پادکستی به نام اجنبی
+                درست کرده که در اون راجع به اتفاقات و تجربیات شخصی خودش صحبت میکنه
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-03.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 35</div>
+                محسن، یک حقوقی از نیویورک
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت از پادکست به سراغ یک رشته و یک شهر جدید رفتیم. این بار با محسن همراه شدیم که در رشته‌ی حقوق تحصیل کرده و در شهر نیویورک
+                زندگی میکنه، یعنی در واقع زندگی میکرده. پس از چند سال زندگی در نیویورک زمانی که ما این مکالمه رو ضبط میکردیم محسن به شهر سن‌دیه‌گو در
+                ایالت کالیفرنیا رفته است
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-04.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 34</div>
+                شرق پر ماجرا، با فرناز از کره جنوبی
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                پس از کمی تاخیر به واسطه اتفاقاتی که در چند هفته گذشته شاهدش بودیم، دوباره با یک قسمت دیگر از رادیو دال برگشتیم و این بار سراغ کره
+                جنوبی رفتیم. از فرهنگ و نحوه زندگی در کره جنوبی حرف زدیم. همچنین ب چطور شد فرناز از کسی که برنامه داشت دکترا بخونه رسید به جایی که
+                گوینده رادیو بوسان در کره شد
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-01.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 37</div>
+                شفق شمالی، با سپهر از فنلاند
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت همراه با سپهر به کشور فنلاند سر زدیم. سپهر در ایران زبان انگلیسی تدریس میکرد. اتفاقاتی که در زندگی‌اش افتاد باعث شد که پس
+                از سال‌ها کار کردن تصمیم به مهاجرت بگیره. در این مسیر علاوه بر فنلاند، از کانادا و کشورهای دیگری هم سر در میاره و تا سه تا مدرک ارشد
+                هم پیش میره
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-02.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 36</div>
+                ویو از اجنبی، وحیده از لهستان
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                وحیده از پادکست اجنبی در این قسمت مهمان رادیو دال شده. وحیده چندین ساله که در لهستان زندگی میکنه. در طول این مدت پادکستی به نام اجنبی
+                درست کرده که در اون راجع به اتفاقات و تجربیات شخصی خودش صحبت میکنه
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-03.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 35</div>
+                محسن، یک حقوقی از نیویورک
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت از پادکست به سراغ یک رشته و یک شهر جدید رفتیم. این بار با محسن همراه شدیم که در رشته‌ی حقوق تحصیل کرده و در شهر نیویورک
+                زندگی میکنه، یعنی در واقع زندگی میکرده. پس از چند سال زندگی در نیویورک زمانی که ما این مکالمه رو ضبط میکردیم محسن به شهر سن‌دیه‌گو در
+                ایالت کالیفرنیا رفته است
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-04.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 34</div>
+                شرق پر ماجرا، با فرناز از کره جنوبی
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                پس از کمی تاخیر به واسطه اتفاقاتی که در چند هفته گذشته شاهدش بودیم، دوباره با یک قسمت دیگر از رادیو دال برگشتیم و این بار سراغ کره
+                جنوبی رفتیم. از فرهنگ و نحوه زندگی در کره جنوبی حرف زدیم. همچنین ب چطور شد فرناز از کسی که برنامه داشت دکترا بخونه رسید به جایی که
+                گوینده رادیو بوسان در کره شد
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-01.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 37</div>
+                شفق شمالی، با سپهر از فنلاند
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت همراه با سپهر به کشور فنلاند سر زدیم. سپهر در ایران زبان انگلیسی تدریس میکرد. اتفاقاتی که در زندگی‌اش افتاد باعث شد که پس
+                از سال‌ها کار کردن تصمیم به مهاجرت بگیره. در این مسیر علاوه بر فنلاند، از کانادا و کشورهای دیگری هم سر در میاره و تا سه تا مدرک ارشد
+                هم پیش میره
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-02.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 36</div>
+                ویو از اجنبی، وحیده از لهستان
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                وحیده از پادکست اجنبی در این قسمت مهمان رادیو دال شده. وحیده چندین ساله که در لهستان زندگی میکنه. در طول این مدت پادکستی به نام اجنبی
+                درست کرده که در اون راجع به اتفاقات و تجربیات شخصی خودش صحبت میکنه
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-03.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 35</div>
+                محسن، یک حقوقی از نیویورک
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت از پادکست به سراغ یک رشته و یک شهر جدید رفتیم. این بار با محسن همراه شدیم که در رشته‌ی حقوق تحصیل کرده و در شهر نیویورک
+                زندگی میکنه، یعنی در واقع زندگی میکرده. پس از چند سال زندگی در نیویورک زمانی که ما این مکالمه رو ضبط میکردیم محسن به شهر سن‌دیه‌گو در
+                ایالت کالیفرنیا رفته است
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-04.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 34</div>
+                شرق پر ماجرا، با فرناز از کره جنوبی
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                پس از کمی تاخیر به واسطه اتفاقاتی که در چند هفته گذشته شاهدش بودیم، دوباره با یک قسمت دیگر از رادیو دال برگشتیم و این بار سراغ کره
+                جنوبی رفتیم. از فرهنگ و نحوه زندگی در کره جنوبی حرف زدیم. همچنین ب چطور شد فرناز از کسی که برنامه داشت دکترا بخونه رسید به جایی که
+                گوینده رادیو بوسان در کره شد
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-01.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 37</div>
+                شفق شمالی، با سپهر از فنلاند
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت همراه با سپهر به کشور فنلاند سر زدیم. سپهر در ایران زبان انگلیسی تدریس میکرد. اتفاقاتی که در زندگی‌اش افتاد باعث شد که پس
+                از سال‌ها کار کردن تصمیم به مهاجرت بگیره. در این مسیر علاوه بر فنلاند، از کانادا و کشورهای دیگری هم سر در میاره و تا سه تا مدرک ارشد
+                هم پیش میره
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-02.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 36</div>
+                ویو از اجنبی، وحیده از لهستان
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                وحیده از پادکست اجنبی در این قسمت مهمان رادیو دال شده. وحیده چندین ساله که در لهستان زندگی میکنه. در طول این مدت پادکستی به نام اجنبی
+                درست کرده که در اون راجع به اتفاقات و تجربیات شخصی خودش صحبت میکنه
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-03.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 35</div>
+                محسن، یک حقوقی از نیویورک
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت از پادکست به سراغ یک رشته و یک شهر جدید رفتیم. این بار با محسن همراه شدیم که در رشته‌ی حقوق تحصیل کرده و در شهر نیویورک
+                زندگی میکنه، یعنی در واقع زندگی میکرده. پس از چند سال زندگی در نیویورک زمانی که ما این مکالمه رو ضبط میکردیم محسن به شهر سن‌دیه‌گو در
+                ایالت کالیفرنیا رفته است
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-04.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 34</div>
+                شرق پر ماجرا، با فرناز از کره جنوبی
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                پس از کمی تاخیر به واسطه اتفاقاتی که در چند هفته گذشته شاهدش بودیم، دوباره با یک قسمت دیگر از رادیو دال برگشتیم و این بار سراغ کره
+                جنوبی رفتیم. از فرهنگ و نحوه زندگی در کره جنوبی حرف زدیم. همچنین ب چطور شد فرناز از کسی که برنامه داشت دکترا بخونه رسید به جایی که
+                گوینده رادیو بوسان در کره شد
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-01.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 37</div>
+                شفق شمالی، با سپهر از فنلاند
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت همراه با سپهر به کشور فنلاند سر زدیم. سپهر در ایران زبان انگلیسی تدریس میکرد. اتفاقاتی که در زندگی‌اش افتاد باعث شد که پس
+                از سال‌ها کار کردن تصمیم به مهاجرت بگیره. در این مسیر علاوه بر فنلاند، از کانادا و کشورهای دیگری هم سر در میاره و تا سه تا مدرک ارشد
+                هم پیش میره
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-02.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 36</div>
+                ویو از اجنبی، وحیده از لهستان
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                وحیده از پادکست اجنبی در این قسمت مهمان رادیو دال شده. وحیده چندین ساله که در لهستان زندگی میکنه. در طول این مدت پادکستی به نام اجنبی
+                درست کرده که در اون راجع به اتفاقات و تجربیات شخصی خودش صحبت میکنه
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-03.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 35</div>
+                محسن، یک حقوقی از نیویورک
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این قسمت از پادکست به سراغ یک رشته و یک شهر جدید رفتیم. این بار با محسن همراه شدیم که در رشته‌ی حقوق تحصیل کرده و در شهر نیویورک
+                زندگی میکنه، یعنی در واقع زندگی میکرده. پس از چند سال زندگی در نیویورک زمانی که ما این مکالمه رو ضبط میکردیم محسن به شهر سن‌دیه‌گو در
+                ایالت کالیفرنیا رفته است
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <span class="position-absolute bg-warning pl-3 py-2 pr-2 rounded-bottom-left">1:12:40</span>
+              <img src="./images/latest-products-04.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">قسمت 34</div>
+                شرق پر ماجرا، با فرناز از کره جنوبی
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                پس از کمی تاخیر به واسطه اتفاقاتی که در چند هفته گذشته شاهدش بودیم، دوباره با یک قسمت دیگر از رادیو دال برگشتیم و این بار سراغ کره
+                جنوبی رفتیم. از فرهنگ و نحوه زندگی در کره جنوبی حرف زدیم. همچنین ب چطور شد فرناز از کسی که برنامه داشت دکترا بخونه رسید به جایی که
+                گوینده رادیو بوسان در کره شد
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Add Arrows -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <div class="container listen-on">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <img src="./images/speaker.png" alt="" class="speaker" />
+          <div class="title">با هم پادکست رادیودال بشنویم</div>
+          <hr />
+          <div class="d-flex">
+            <button>
+              <img src="./images/google-products.jpg" alt="" />
+            </button>
+            <button class="mx-2">
+              <img src="./images/apple-products.jpg" alt="" />
+            </button>
+            <button>
+              <img src="./images/spotify.jpg" alt="" />
+            </button>
+          </div>
+          <p class="text-justify mt-3">
+            <b>پادکست</b>
+            یک مجموعه دنباله‌دار از فایل‌های صوتی است که بر روی اینترنت منتشر میشه. برخلاف برنامه‌های رادیویی که زمان پخش مشخص دارند، هرکس در هر زمانی
+            که بخواد می‌تونه هر قسمت از پادکست رو دانلود کنه و گوش بده
+          </p>
+          <div class="text-left mt-4">
+            <a href="#">
+              درباره پادکست بیشتر بخوانیم
+              <i class="fa fa-arrow-left mr-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="background-logo">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 description">
+            <i class="fa fa-quote-right"></i>
+            <p>
+              در روز اول این پادکست به این صورت شکل گرفت که من دنبال این بودم تا راجع به مهاجرت بیشتر بدونم، این شد که با دوستام تماس گرفتم و ازشون
+              خواستم برام از تجربیاتشون تعریف کنن. این روند هنوز هم ادامه داره. مسیر پادکست مسیری است که مجموعه‌ای از سوالات و کنجکاوی‌ها منو به اون
+              سمت هدایت می‌کنند
+              <br />
+              جذابیت هر قسمت به مقدار زیادی بستگی به مهمان برنامه داره. نه اینکه یک مهمان خوب باشه و یکی دیگه بد، بلکه ممکنه شما با یه مهمان ارتباط
+              خیلی خوبی برقرار کنید، ولی با یکی دیگه نه. در واقع تلاش برای شخصی کردن مکالمات باعث میشه بتونید با برخی همذات پنداری بیشتری داشته باشید
+              که در نتیجه گوش دادن به اون قسمت براتون دلچسب‌تر میشه. با این حال من تلاش میکنم تعادلی بین این شخصی‌سازی و انتقال دانش برقرار کنم، به
+              نحوی که مطمئن باشید با گوش دادن هر قسمت یه چیز جدید به دانشتون اضافه میشه
+            </p>
+            <i class="fa fa-quote-left"></i>
+          </div>
+          <div class="col-md-5">
+            <div class="d-flex flex-column align-items-center text-dark">
+              <img src="./images/radiodall-user.png" alt="" />
+              <b>آرش طاهر</b>
+              <div>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-twitter mr-2"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="magazine">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="title">
+          <i class="fa fa-play"></i>
+          آخرین قسمت های منتشر شده
+        </div>
+        <div><span>حامی استارتاپی</span> <i class="fa fa-arrow-left"></i></div>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img-box">
+              <img src="./images/magazine-01.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">تیر ماه 1399</div>
+                اجرای زنده در کست‌باکس با فرناز، از شرق پرماجرا
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                یکشنبه، یک تیر - ساعت هشت شب منتظر شما هستیم با یکی دیگر از اجراهای زنده در کست باکس. قسمت های زنده ذخیره نمیشوند
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <img src="./images/magazine-02.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">تیر ماه 1399</div>
+                تمامی صداها در اسپاتیفای موجود هستند
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در قسمت قبل و در گفتگو با دنیز، یک قطعه آهنگ از مجموعه دیاسپوران به نام «کاش‌ها» رو استفاده کردیم.
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <img src="./images/magazine-03.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">تیر ماه 1399</div>
+                گفتگوی زنده، با محمد مدرس
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در طول این مدت هر از چندگاهی با دوستانی از قسمت‌های قبل در کست‌باکس اجرای زنده داشتیم. برای دفعه بعد قراره با محمد هم صحبت بشیم. گفتگو
+                بیشتر درباره‌ی اتفاقات و داستان‌هایی خواهد بود که محمد از قسمت قبل تا الان داشته.
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <img src="./images/magazine-04.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">تیر ماه 1399</div>
+                گوشه‌های عجیب و غریب اسپانیا
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این پادکست آرش به دنبال جواب سوالاتی که دارد و یا برای شنیدن یک داستان جذاب با آدم‌های مختلف هم‌صحبت می‌شود.
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <img src="./images/magazine-01.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">تیر ماه 1399</div>
+                اجرای زنده در کست‌باکس با فرناز، از شرق پرماجرا
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                یکشنبه، یک تیر - ساعت هشت شب منتظر شما هستیم با یکی دیگر از اجراهای زنده در کست باکس. قسمت های زنده ذخیره نمیشوند
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <img src="./images/magazine-02.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">تیر ماه 1399</div>
+                تمامی صداها در اسپاتیفای موجود هستند
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در قسمت قبل و در گفتگو با دنیز، یک قطعه آهنگ از مجموعه دیاسپوران به نام «کاش‌ها» رو استفاده کردیم.
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <img src="./images/magazine-03.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">تیر ماه 1399</div>
+                گفتگوی زنده، با محمد مدرس
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در طول این مدت هر از چندگاهی با دوستانی از قسمت‌های قبل در کست‌باکس اجرای زنده داشتیم. برای دفعه بعد قراره با محمد هم صحبت بشیم. گفتگو
+                بیشتر درباره‌ی اتفاقات و داستان‌هایی خواهد بود که محمد از قسمت قبل تا الان داشته.
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-box">
+              <img src="./images/magazine-04.png" class="w-100" alt="" />
+              <div class="title">
+                <div class="part">تیر ماه 1399</div>
+                گوشه‌های عجیب و غریب اسپانیا
+              </div>
+            </div>
+            <div class="description">
+              <p class="border-right-dashed">
+                در این پادکست آرش به دنبال جواب سوالاتی که دارد و یا برای شنیدن یک داستان جذاب با آدم‌های مختلف هم‌صحبت می‌شود.
+              </p>
+              <a href="#">
+                بیشتر
+                <i class="fa fa-arrow-left mr-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Add Arrows -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <hr class="my-5" />
+    <div class="about container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="title">شرکت در پادکست</div>
+          <div class="subtitle">من علاقمنــد به شرکت در یک قسمت از پادکست رادیو دال هستم. برای شرکت در پادکست چیکاری میشه انجام داد؟</div>
+          <p>
+            قبل از هر چیز تشکر میکنم از شما که در ساخت پادکست مشارکت فعال دارید. همراهی دوستان عزیز مثل شماست که باعث میشه این پادکست بتونه به مسیر
+            خودش ادامه بده. برای شرکت در پادکست چند پیش‌نیاز وجود داره که پیشنهاد میکنم حتما
+            <a href="#"
+              >این پست را
+              <i class="fa fa-arrow-left"></i>
+            </a>
+            را کامل بخوانید
+          </p>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <div class="title">برای اطلاع از آخرین پادکست‌های رادیو دال ما را دنبال کنید</div>
+            <div class="d-flex justify-content-center mt-3">
+              <input type="email" id="" placeholder="ایمیل خود را وارد کنید">
+              <span class="send">
+                <i class="fa fa-arrow-left"></i>
+              </span>
+            </div>
+            <div class="mt-5">
+              <div class="text-center">
+                <i class="fa fa-wifi fa-rotate-45"></i>
+                <i class="fa fa-instagram mr-2"></i>
+                <i class="fa fa-telegram mr-2"></i>
+                <i class="fa fa-twitter mr-2"></i>
+              </div>
+              <div class="links">
+                <a href="#">پرسش های متداول</a>
+                <a href="#">شرکت در پادکست</a>
+                <a href="#">حمایت</a>
+                <a href="#">تماس</a>
+                <a href="#">آرشیو</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./js/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".swiper-container", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
